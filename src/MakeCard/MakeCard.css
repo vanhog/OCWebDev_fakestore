@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@layer components {
+  .article-title {
+    @apply text-xs font-black self-start;
+  }
+
+  .article-line {
+    @apply border-gray-200;
+  }
+
+  .article-price {
+    @apply text-green-600 font-bold text-base;
+  }
+
+  .article-button {
+    @apply bg-orange-400 p-2 text-white font-bold;
+  }
+}
