@@ -1,16 +1,28 @@
-# React + Vite
+# 🛍️ Project Fakestore API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## **Task**
 
-Currently, two official plugins are available:
+Build a small e-commerce store using the [FakeStore API](https://fakestoreapi.com/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## **✅ Requirements**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Use real product data from the FakeStore API.
+- Create a clean and visually appealing interface.
+- Explore and use the available API endpoints from the official docs:https://fakestoreapi.com/docs
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## **📦 Suggested Deliverables**
+
+- Product listing page
+- Category-based filtering
+- Basic search and/or sorting
+- Loading and error states
+
+---
+
+## Screenshot
+
+![](./assets/images/screenshot.png)
