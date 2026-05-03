@@ -2,7 +2,7 @@ import './MakeCard.css';
 
 export default function MakeCard(props) {
   return (
-    <div className="w-70 h-120 p-[2%] flex flex-col justify-between items-center bg-white rounded-md border border-gray-300">
+    <div className="w-70 h-120 p-[2%] flex flex-col justify-between items-center  rounded-md border border-gray-300">
       <img
         src={props.article.image}
         alt={props.article.title}
