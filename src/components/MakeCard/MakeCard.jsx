@@ -1,21 +1,21 @@
 import './MakeCard.css';
 
-export default function MakeCard(props) {
+export default function MakeCard({ article }) {
   return (
-    <div className="w-70 h-[30rem] p-[2%] flex flex-col justify-between items-center rounded-md border bg-white border-gray-300">
+    <div className="w-70 h-120 p-[2%] flex flex-col justify-between  rounded-md border article-card">
       <img
-        src={props.article.image}
-        alt={props.article.title}
+        src={article.image}
+        alt={article.title}
         className="w-full max-h-[60%] mb-8"
       />
       <div className="w-full h-full flex flex-col justify-end">
-        <h1 className="article-title ">{props.article.title}</h1>
+        <h1 className="article-title ">{article.title}</h1>
         <hr className="article-line w-full border-[0.5px] my-3"></hr>
         <div className="w-full flex flex-row justify-between items-center">
           <div className="article-price">
-            € <span>{props.article.price}</span>
+            € <span>{article.price}</span>
           </div>
-          <button className=" bg-orange-400 text-white font-bold text-xs p-2 rounded-md">
+          <button className="article-button-add2card p-2 rounded ">
             Add to cart
           </button>
         </div>
