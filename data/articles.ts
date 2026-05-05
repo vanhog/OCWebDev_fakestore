@@ -1,4 +1,19 @@
-export const articles = [
+type Rating = {
+  rate: number;
+  count: number;
+};
+
+export type Article = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: Rating;
+};
+
+export const articles: Article[] = [
   {
     id: 1,
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',

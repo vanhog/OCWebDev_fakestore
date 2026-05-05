@@ -1,5 +1,6 @@
-import MakeCard from './components/MakeCard/MakeCard.jsx';
-import { articles } from '../data/articles.js';
+import MakeCard from './components/MakeCard/MakeCard';
+import { articles } from '../data/articles';
+
 
 export default function App() {
   return (

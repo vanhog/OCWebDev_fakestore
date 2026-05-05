@@ -1,6 +1,12 @@
 import './MakeCard.css';
+import type { Article } from '../../../data/articles'
 
-export default function MakeCard({ article }) {
+
+type MakeCardProps = {
+  article: Article;
+};
+
+export default function MakeCard({ article }: MakeCardProps) {
   return (
     <div className="w-70 h-120 p-[2%] flex flex-col justify-between  rounded-md border article-card">
       <img
