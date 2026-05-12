@@ -18,21 +18,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-4xl font-bold text-center text-orange-500 mb-6">
+      <h1 className="text-4xl font-bold text-center text-orange-600 mb-6">
         SuperFakeStore
       </h1>
 
-      <div className="bg-orange-400 p-6 rounded-xl flex flex-col md:flex-row gap-4 items-center justify-between mb-8">
+      <div className="bg-orange-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
         <input
           type="text"
           placeholder="Search by title"
-          className="px-4 py-2 rounded-md w-full md:w-1/3"
+          className="px-2 py-2 rounded-md w-full md:w-1/3"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
 
         <select
-          className="px-4 py-2 rounded-md"
+          className="px-2 py-2 rounded-md"
           value={sort}
           onChange={(e) => setSort(e.target.value)}
         >
