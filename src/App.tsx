@@ -56,31 +56,32 @@ export default function App() {
 
       {/* Products  */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white rounded-xl shadow-md p-4 flex flex-col"
-          >
-            <img
-              src={product.image}
-              alt={product.title}
-              className="h-60 object-contain mb-4"
-            />
+        {filtered.map((product) => ( <p>{product.title} </p>
+          // <div
+          //   key={product.id}
+          //   className="bg-white rounded-xl shadow-md p-4 flex flex-col"
+          // >
+          //   <img
+          //     src={product.image}
+          //     alt={product.title}
+          //     className="h-60 object-contain mb-4"
+          //   />
 
-            <h2 className="text-gray-700 font-semibold text-sm mb-2">
-              {product.title}
-            </h2>
+          //   <h2 className="text-gray-700 font-semibold text-sm mb-2">
+          //     {product.title}
+          //   </h2>
 
-            <div className="mt-auto flex items-center justify-between">
-              <span className="text-green-600 font-bold">
-                $ {product.price}
-              </span>
-              <button className="bg-orange-500 text-white px-3 py-1 rounded-md">
-                Add to cart
-              </button>
-            </div>
-          </div>
-        ))}
+          //   <div className="mt-auto flex items-center justify-between">
+          //     <span className="text-green-600 font-bold">
+          //       $ {product.price}
+          //     </span>
+          //     <button className="bg-orange-500 text-white px-3 py-1 rounded-md">
+          //       Add to cart
+          //     </button>
+          //   </div>
+          // </div>
+        )
+        )}
       </div>
     </div>
   );
