@@ -1,5 +1,5 @@
 import './MakeCard.css';
-import type { Article } from '../../../data/articles'
+import type { Article } from '../../product';
 
 
 type MakeCardProps = {
@@ -8,7 +8,7 @@ type MakeCardProps = {
 
 export default function MakeCard({ article }: MakeCardProps) {
   return (
-    <div className="w-70 h-120 p-[2%] flex flex-col justify-between  rounded-md border article-card">
+    <div  className="w-70 h-120 p-[2%] flex flex-col justify-between  rounded-md border article-card">
       <img
         src={article.image}
         alt={article.title}
