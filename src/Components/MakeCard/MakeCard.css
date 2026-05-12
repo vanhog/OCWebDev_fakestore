@@ -1,0 +1,23 @@
+@reference "../index.css";
+
+@layer components {
+  .article-card {
+    @apply bg-white border-gray-300;
+  }
+
+  .article-title {
+    @apply text-xs font-black self-start;
+  }
+
+  .article-line {
+    @apply border-gray-200;
+  }
+
+  .article-price {
+    @apply text-green-600 font-bold text-base;
+  }
+
+  .article-button-add2card {
+    @apply bg-orange-600 text-xs font-bold text-white;
+  }
+}

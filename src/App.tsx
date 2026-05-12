@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 
 import products from './product.tsx';
+import MakeCard from './Components/MakeCard/MakeCard.tsx';
 
 export default function App() {
   const [search, setSearch] = useState("");
@@ -56,7 +57,8 @@ export default function App() {
 
       {/* Products  */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filtered.map((product) => ( <p>{product.title} </p>
+        {filtered.map((product) => (<> 
+                <MakeCard key={product.id} article={product} /></>
           // <div
           //   key={product.id}
           //   className="bg-white rounded-xl shadow-md p-4 flex flex-col"
