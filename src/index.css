@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 @import "tailwindcss";
 @source "../index.html";
 @source "./**/*.{js,jsx,ts,tsx}";
+=======
+@import "tailwindcss";
+>>>>>>> main
