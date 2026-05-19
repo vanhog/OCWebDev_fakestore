@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
-import { products } from './product.tsx';
+//import { products } from './product.tsx';
+
+import type { Article } from './product.tsx';
+
 import MakeCard from './Components/MakeCard/MakeCard.tsx';
 
 export default function App() {
+  const [products, setProducts] = useState<Article[]>([]);
+
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('none');
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products');
+        if (!res.ok) throw new Error('Fetch failed');
+        const data: Article[] = await res.json();
+        setProducts(data);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    load();
+  }, []);
 
   const filtered = products
     .filter((p) => p.title.toLowerCase().includes(search.toLowerCase()))
