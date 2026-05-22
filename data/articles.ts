@@ -13,7 +13,11 @@ export type Article = {
   rating: Rating;
 };
 
+<<<<<<<< HEAD:data/articles.ts
+export const articles: Article[] = [
+========
 export const products: Article[] = [
+>>>>>>>> main:src/product.tsx
   {
     id: 1,
     title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
