@@ -9,7 +9,7 @@ import MakeCard from './Components/MakeCard/MakeCard.tsx';
 
 export default function App() {
   const [products, setProducts] = useState<Article[]>([]);
-
+  const [category, setCategory] = useState('');
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('none');
 
@@ -28,20 +28,31 @@ export default function App() {
   }, []);
 
   const filtered = products
-    .filter((p) => p.title.toLowerCase().includes(search.toLowerCase()))
-    .sort((a, b) => {
+    .filter((p) => {
+      const matchesCategory = 
+        category === '' ||
+        p.category === category;
+      const matchesSearch =
+         search === '' ||
+          p.title.toLowerCase().includes(search.toLowerCase())
+        return matchesCategory && matchesSearch;
+      })
+      .sort((a, b) => {
       if (sort === 'price-asc') return a.price - b.price;
       if (sort === 'price-desc') return b.price - a.price;
       return 0;
     });
+    
+      
+  
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-4xl font-bold text-center text-orange-600 mb-6">
+      <h1 className="text-4xl font-bold text-center text-rose-600 mb-6">
         SuperFakeStore
       </h1>
 
-      <div className="bg-orange-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
+      <div className="bg-rose-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
         <input
           type="text"
           placeholder="Search by title"
@@ -69,11 +80,32 @@ export default function App() {
           ].map((cat) => (
             <button
               key={cat}
-              className="bg-white text-orange-500 px-3 py-1 rounded-full text-sm"
+              onClick={() => setCategory(cat)}
+              className={`
+                bg-white text-rose-600 px-3 py-1 rounded-full text-sm
+                ${
+                  category === cat
+                    ? ' text-rose-900 font-bold shadow-md'
+                    : ' text-rose-500 hover:bg-rose-300'
+                }
+               `}
             >
               {cat}
             </button>
           ))}
+          <button 
+            onClick={() => setCategory('')}
+            className={`
+                bg-white text-rose-600 px-3 py-1 rounded-full text-sm
+                ${
+                  category === ''
+                    ? ' text-rose-900 font-bold shadow-md'
+                    : ' text-rose-500 hover:bg-rose-300'
+                }
+               `}
+          >
+            All
+          </button>
         </div>
       </div>
 
