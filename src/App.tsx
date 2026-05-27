@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
+import {   Routes,  Route} from "react-router-dom";
 import './App.css';
-
+import Home from './pages/Home.tsx';
+import Login from './pages/Login.tsx';
 //import { products } from './product.tsx';
 
 import type { Article } from './product.tsx';
-
 import MakeCard from './Components/MakeCard/MakeCard.tsx';
+
 
 export default function App() {
   const [products, setProducts] = useState<Article[]>([]);
@@ -49,9 +51,17 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <h1 className="text-4xl font-bold text-center text-rose-600 mb-6">
-        SuperFakeStore
+        Super Fake Store
       </h1>
-
+     
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+     
       <div className="bg-rose-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
         <input
           type="text"
