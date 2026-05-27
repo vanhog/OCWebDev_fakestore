@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
-
-//import { products } from './product.tsx';
 
 import type { Article } from './product.tsx';
 
@@ -12,6 +10,15 @@ export default function App() {
 
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('none');
+  const [cart, setCart] = useState<Article[]>([]);
+
+  function addToCart(product: Article) {
+    setCart((prevCart) => {
+      const next = [...prevCart, product];
+      console.log('cart after add:', next);
+      return next;
+    });
+  }
 
   useEffect(() => {
     async function load() {
@@ -81,7 +88,11 @@ export default function App() {
 
       <div className="flex min-h-screen flex-row flex-wrap items-start justify-center gap-3 bg-gray-200 p-6">
         {filtered.map((product) => (
-          <MakeCard key={product.id} article={product} />
+          <MakeCard
+            key={product.id}
+            article={product}
+            onAddToCart={addToCart}
+          />
         ))}
       </div>
     </div>

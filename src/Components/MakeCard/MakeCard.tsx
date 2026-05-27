@@ -1,14 +1,14 @@
 import './MakeCard.css';
 import type { Article } from '../../product';
 
-
 type MakeCardProps = {
   article: Article;
+  onAddToCart: (product: Article) => void;
 };
 
-export default function MakeCard({ article }: MakeCardProps) {
+export default function MakeCard({ article, onAddToCart }: MakeCardProps) {
   return (
-    <div  className="w-70 h-120 p-[2%] flex flex-col justify-between  rounded-md border article-card">
+    <div className="w-70 h-120 p-[2%] flex flex-col justify-between  rounded-md border article-card">
       <img
         src={article.image}
         alt={article.title}
@@ -21,7 +21,10 @@ export default function MakeCard({ article }: MakeCardProps) {
           <div className="article-price">
             € <span>{article.price}</span>
           </div>
-          <button className="article-button-add2card p-2 rounded ">
+          <button
+            className="article-button-add2card p-2 rounded "
+            onClick={() => onAddToCart(article)}
+          >
             Add to cart
           </button>
         </div>
