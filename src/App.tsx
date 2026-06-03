@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
+import Register from './pages/Register.tsx';
 //import { products } from './product.tsx';
 
 import type { Article } from './product.tsx';
@@ -61,6 +62,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
 
       <div className="bg-rose-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
