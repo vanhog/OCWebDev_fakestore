@@ -69,13 +69,13 @@ export default function App() {
         <input
           type="text"
           placeholder="Search by title"
-          className="px-2 py-2 rounded-md w-full md:w-1/3"
+          className=" bg-white px-2 py-2 rounded-md w-full md:w-1/3"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
 
         <select
-          className="px-2 py-2 rounded-md"
+          className="px-2 py-2 rounded-md border border-white"
           value={sort}
           onChange={(e) => setSort(e.target.value)}
         >
