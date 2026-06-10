@@ -34,7 +34,7 @@ function Cartview(props: { cart: Article[] }) {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-fit max-h-15 mb-8 mt-4 text-right"
+                      className="w-fit max-h-15 mb-8 mt-4"
                     />
                   </td>
                   <td className="flex flex-col justify-center items-start cart-item-text">
