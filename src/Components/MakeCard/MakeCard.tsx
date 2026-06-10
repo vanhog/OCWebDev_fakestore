@@ -1,5 +1,6 @@
 import './MakeCard.css';
 import type { Article } from '../../product';
+import './MakeCard.tsx';
 
 type MakeCardProps = {
   article: Article;
