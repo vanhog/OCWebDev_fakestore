@@ -30,11 +30,11 @@ function Cartview(props: { cart: Article[] }) {
             <tbody>
               {props.cart.map((item) => (
                 <tr key={item.id}>
-                  <td>
+                  <td className="cart-item-number">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full max-h-15 mb-8 mt-4"
+                      className="w-fit max-h-15 mb-8 mt-4 text-right"
                     />
                   </td>
                   <td className="flex flex-col justify-center items-start cart-item-text">
