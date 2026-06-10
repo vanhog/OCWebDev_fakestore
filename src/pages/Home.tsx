@@ -31,7 +31,7 @@ function Home() {
         console.error(e);
       }
     }
-    load();
+    load(); 
   }, []);
 
   const filtered = products
@@ -50,12 +50,6 @@ function Home() {
   return (
     <div>
       <Navbar />
-
-      <div>
-        <h1 className="text-2xl font-bold flex justify-end pt-2 pb-2">
-          Welcome!
-        </h1> 
-      </div>
       <div className="bg-rose-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
         <input
           type="text"
