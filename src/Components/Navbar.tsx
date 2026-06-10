@@ -43,7 +43,7 @@ function Navbar() {
         )}
       </div>
       <Link
-        to="/checkout"
+        to="/cartview"
         className="w-8 h-8 bg-no-repeat bg-center bg-contain bg-[url('/src/Components/cart.svg')]"
       >
         <div
