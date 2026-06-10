@@ -4,7 +4,7 @@ import './App.css';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import Register from './pages/Register.tsx';
-import Checkout from './pages/Checkout.tsx';
+import Checkout from './pages/Cartview.tsx';
 //import { products } from './product.tsx';
 
 import type { Article } from './product.tsx';

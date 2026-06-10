@@ -1,7 +1,7 @@
-import Navbar from '../Components/Navbar';
+import Navbar from '../Components/Navbar.tsx';
 import type { Article } from '../product.tsx';
 
-function Checkout(props: { cart: Article[] }) {
+function Cartview(props: { cart: Article[] }) {
   return (
     <div>
       <Navbar />
@@ -20,4 +20,4 @@ function Checkout(props: { cart: Article[] }) {
   );
 }
 
-export default Checkout;
+export default Cartview;
