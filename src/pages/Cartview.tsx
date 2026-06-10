@@ -1,3 +1,4 @@
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar.tsx';
 import type { Article } from '../product.tsx';
 import './pages.css';
@@ -11,6 +12,12 @@ function Cartview(props: { cart: Article[] }) {
         <h1 className="text-2xl font-bold flex justify-end pt-2 pb-2">
           Your cart
         </h1>
+        <h2>
+          {' '}
+          <Link to="/" className="border border-black px-4 py-2 rounded">
+            Continue shopping
+          </Link>
+        </h2>
         <div className="flex justify-center items-center">
           <table className="mt-10">
             <thead>
