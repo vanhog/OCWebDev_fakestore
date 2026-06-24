@@ -1,8 +1,7 @@
-import Navbar from "../Components/Navbar";
+import Navbar from '../Components/Navbar';
 import type { Article } from '../product.tsx';
-import MakeCard from "../Components/MakeCard/MakeCard.tsx";
-import { useEffect, useState } from "react";
-
+import MakeCard from '../Components/MakeCard/MakeCard.tsx';
+import { useEffect, useState } from 'react';
 
 function Home() {
   const [products, setProducts] = useState<Article[]>([]);
@@ -10,6 +9,7 @@ function Home() {
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('none');
   const [cart, setCart] = useState<Article[]>([]);
+
   function addToCart(product: Article) {
     setCart((prevCart) => {
       const next = [...prevCart, product];
@@ -31,7 +31,7 @@ function Home() {
         console.error(e);
       }
     }
-    load(); 
+    load();
   }, []);
 
   const filtered = products
@@ -118,7 +118,6 @@ function Home() {
           />
         ))}
       </div>
-
     </div>
   );
 }
