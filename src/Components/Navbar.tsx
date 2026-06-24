@@ -1,23 +1,26 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import type { User } from '../pages/type.ts';
 
-function Navbar() {
+function Navbar({ cartCount }: { cartCount: number }) {
   const navigate = useNavigate();
-  const [user, setUser] = useState<string | null>(() =>
-    localStorage.getItem('user'),
-  );
+  const [user, setUser] = useState<User | null>(() => {
+    const stored = localStorage.getItem('user');
+    return stored ? JSON.parse(stored) : null;
+  });
 
   const logout = () => {
     localStorage.removeItem('user');
     setUser(null);
     navigate('/');
   };
-
+  const username = user?.username || user?.email || 'Guest';
   return (
     <nav className="flex justify-end items-center p-4 border-b gap-3">
-      {/* <Link to="/" className="text-2xl font-bold">
-        FakeStore
-      </Link> */}
+      {/* Left side: Welcome message */}
+      <div className="text-lg font-semibold">
+        {user ? `Welcome, ${username} 👋` : 'Welcome 👋'}
+      </div>
 
       <div className="flex gap-3">
         {user ? (
@@ -50,7 +53,7 @@ function Navbar() {
           id="noItems"
           className="flex justify-center items-center bg-rose-300 w-4 h-4 rounded-[50%]"
         >
-          0
+          {cartCount}
         </div>
       </Link>
     </nav>

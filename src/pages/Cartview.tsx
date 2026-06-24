@@ -6,7 +6,7 @@ import './pages.css';
 function Cartview(props: { cart: Article[] }) {
   return (
     <div className="h-screen">
-      <Navbar />
+      <Navbar cartCount={props.cart.length} />
 
       <div>
         <h1 className="text-2xl font-bold flex justify-end pt-2 pb-2">
