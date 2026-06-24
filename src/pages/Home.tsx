@@ -53,17 +53,17 @@ function Home({ cart, setCart }: CartProps) {
   return (
     <div>
       <Navbar cartCount={cart.length} />
-      <div className="bg-rose-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
+      <div className="bg-rose-400 p-6 my-3 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
         <input
           type="text"
           placeholder="Search by title"
-          className="px-2 py-2 rounded-md w-full md:w-1/3"
+          className="px-2 py-2 rounded-md w-full md:w-1/3 bg-white"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
 
         <select
-          className="px-2 py-2 rounded-md"
+          className="px-2 py-2 rounded-md bg-white"
           value={sort}
           onChange={(e) => setSort(e.target.value)}
         >
