@@ -3,12 +3,12 @@ import type { Article } from '../product.tsx';
 import MakeCard from '../Components/MakeCard/MakeCard.tsx';
 import { useEffect, useState } from 'react';
 
-type HomeProps = {
+type CartProps = {
   cart: Article[];
   setCart: React.Dispatch<React.SetStateAction<Article[]>>;
 };
 
-function Home({ cart, setCart }: HomeProps) {
+function Home({ cart, setCart }: CartProps) {
   const [products, setProducts] = useState<Article[]>([]);
   const [category, setCategory] = useState('');
   const [search, setSearch] = useState('');
