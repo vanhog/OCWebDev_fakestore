@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import type { User } from '../pages/type.ts';
 
-function Navbar() {
+function Navbar({ cartCount }: { cartCount: number }) {
   const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(() => {
     const stored = localStorage.getItem('user');
@@ -45,12 +45,15 @@ function Navbar() {
           </>
         )}
       </div>
-      <Link className="w-8 h-8 bg-no-repeat bg-center bg-contain bg-[url('/src/Components/cart.svg')]">
+      <Link
+        to="/cartview"
+        className="w-8 h-8 bg-no-repeat bg-center bg-contain bg-[url('/src/Components/cart.svg')]"
+      >
         <div
           id="noItems"
           className="flex justify-center items-center bg-rose-300 w-4 h-4 rounded-[50%]"
         >
-          0
+          {cartCount}
         </div>
       </Link>
     </nav>

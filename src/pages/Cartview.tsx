@@ -1,12 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar.tsx';
 import type { Article } from '../product.tsx';
-//import './pages.css';
+import './pages.css';
 
 function Cartview(props: { cart: Article[] }) {
   return (
     <div className="h-screen">
-      <Navbar />
+      <Navbar cartCount={props.cart.length} />
 
       <div>
         <h1 className="text-2xl font-bold flex justify-end pt-2 pb-2">

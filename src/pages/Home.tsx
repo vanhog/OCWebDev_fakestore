@@ -3,19 +3,22 @@ import type { Article } from '../product.tsx';
 import MakeCard from '../Components/MakeCard/MakeCard.tsx';
 import { useEffect, useState } from 'react';
 
-function Home() {
+type HomeProps = {
+  cart: Article[];
+  setCart: React.Dispatch<React.SetStateAction<Article[]>>;
+};
+
+function Home({ cart, setCart }: HomeProps) {
   const [products, setProducts] = useState<Article[]>([]);
   const [category, setCategory] = useState('');
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('none');
-  const [cart, setCart] = useState<Article[]>([]);
 
   function addToCart(product: Article) {
     setCart((prevCart) => {
       const next = [...prevCart, product];
       console.log('cart after add:', next);
       console.log(next.length);
-      document.getElementById('noItems')!.innerHTML = String(next.length);
       return next;
     });
   }
@@ -49,7 +52,7 @@ function Home() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar cartCount={cart.length} />
       <div className="bg-rose-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
         <input
           type="text"
