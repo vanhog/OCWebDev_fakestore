@@ -20,7 +20,7 @@ export default function MakeCard({ article, onAddToCart }: MakeCardProps) {
         <hr className="article-line w-full border-[0.5px] my-3"></hr>
         <div className="w-full flex flex-row justify-between items-center">
           <div className="article-price">
-            € <span>{article.price}</span>
+            € <span>{article.price.toFixed(2)}</span>
           </div>
           <button
             className="article-button-add2card p-2 rounded "

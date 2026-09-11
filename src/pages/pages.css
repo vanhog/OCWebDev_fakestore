@@ -1,0 +1,19 @@
+@reference "../index.css";
+
+@layer components {
+  .cart-header-text {
+    @apply px-3 text-left text-lg pb-4;
+  }
+
+  .cart-header-number {
+    @apply px-3 text-right font-light text-sm pb-4;
+  }
+
+  .cart-item-text {
+    @apply px-3 text-left text-lg py-4;
+  }
+
+  .cart-item-number {
+    @apply px-3 text-right text-lg;
+  }
+} /* layer components */

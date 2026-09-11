@@ -1,21 +1,24 @@
-import Navbar from "../Components/Navbar";
+import Navbar from '../Components/Navbar';
 import type { Article } from '../product.tsx';
-import MakeCard from "../Components/MakeCard/MakeCard.tsx";
-import { useEffect, useState } from "react";
+import MakeCard from '../Components/MakeCard/MakeCard.tsx';
+import { useEffect, useState } from 'react';
 
+type CartProps = {
+  cart: Article[];
+  setCart: React.Dispatch<React.SetStateAction<Article[]>>;
+};
 
-function Home() {
+function Home({ cart, setCart }: CartProps) {
   const [products, setProducts] = useState<Article[]>([]);
   const [category, setCategory] = useState('');
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('none');
-  const [cart, setCart] = useState<Article[]>([]);
+
   function addToCart(product: Article) {
     setCart((prevCart) => {
       const next = [...prevCart, product];
       console.log('cart after add:', next);
       console.log(next.length);
-      document.getElementById('noItems')!.innerHTML = String(next.length);
       return next;
     });
   }
@@ -31,7 +34,7 @@ function Home() {
         console.error(e);
       }
     }
-    load(); 
+    load();
   }, []);
 
   const filtered = products
@@ -49,18 +52,18 @@ function Home() {
 
   return (
     <div>
-      <Navbar />
-      <div className="bg-rose-400 p-6 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
+      <Navbar cartCount={cart.length} />
+      <div className="bg-rose-400 p-6 my-3 rounded-xl flex flex-col md:flex-row gap-1 items-center justify-between mb-8">
         <input
           type="text"
           placeholder="Search by title"
-          className="px-2 py-2 rounded-md w-full md:w-1/3"
+          className="px-2 py-2 rounded-md w-full md:w-1/3 bg-white"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
 
         <select
-          className="px-2 py-2 rounded-md"
+          className="px-2 py-2 rounded-md bg-white"
           value={sort}
           onChange={(e) => setSort(e.target.value)}
         >
@@ -118,7 +121,6 @@ function Home() {
           />
         ))}
       </div>
-
     </div>
   );
 }
